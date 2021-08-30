@@ -14,5 +14,6 @@ public class Exercise1 {
               int num3=input.nextInt();
               int average=(num1+num2+num3)/3;
               System.out.println("Average is "+average);
+		System.out.println("added from terminal");
        }
 }
