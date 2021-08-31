@@ -9,7 +9,7 @@ public class Exercise6 {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter Fahrenheit");
         double fahrenheit=input.nextDouble();
-      //  double cersius=5(fahrenheit-32)/9;
+        double cersius=5(fahrenheit-32)/9;
         System.out.println("cersius");
     }
 }
