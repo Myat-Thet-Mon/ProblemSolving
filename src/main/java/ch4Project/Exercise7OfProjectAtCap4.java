@@ -3,7 +3,7 @@ package ch4Project;
 import java.util.Scanner;
 
 /*
-
+smallest
  */
 public class Exercise7OfProjectAtCap4 {
     public static void main(String[] args) {
@@ -31,7 +31,7 @@ public class Exercise7OfProjectAtCap4 {
                 } else if (score >= 60 && score <= 69) {
                     d++;
                 } else if (score >= 0 && score <= 59) {
-                    c++;
+                    f++;
                 }
                 if (score > highest) {
                     highest = score;
@@ -47,14 +47,7 @@ public class Exercise7OfProjectAtCap4 {
         }
         System.out.println("Total score " + totalScore);
         double totalGrade = a + b + c + d + f;
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(c);
-        System.out.println(d);
-        System.out.println(f);
-
         System.out.println("Total Grade " + totalGrade);
-
         System.out.println("Percent if A " + 100 * (a / totalGrade));
         System.out.println("Percent if B " + 100 * (b / totalGrade));
         System.out.println("Percent if C " + 100 * (c / totalGrade));

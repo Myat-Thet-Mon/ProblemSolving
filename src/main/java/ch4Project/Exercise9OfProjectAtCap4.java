@@ -1,5 +1,6 @@
 package ch4Project;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 /*
@@ -16,8 +17,9 @@ public class Exercise9OfProjectAtCap4 {
             String s = Character.toString(a);
             String b = word.substring(1);
             String c = b + s;
+            c=c.toLowerCase();
             for (int i = 0; i < c.length(); i++) {
-                char f = c.charAt(word.length()-1 - i);
+                char f = c.charAt(word.length() - 1 - i);
                 System.out.print(f);
             }
             System.out.println(" ");

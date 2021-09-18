@@ -24,11 +24,14 @@ public class Exercise9 {
         System.out.println("Enter name");
         String N=input.next();
 
-        String a=line.replace("Color",C);
-        String b=a.replace("Food",F);
-        String c=b.replace("Animal",A);
-        String d=c.replace("Name",N);
-        System.out.println(d);
+        line = line.replace("Color",C)
+                .replace("Food", F)
+                .replace("Animal",A)
+                .replace("Name",N);
+//        line = line.replace("Food",F); //
+//        line=line.replace("Animal",A);
+//        line=line.replace("Name",N);
+        System.out.println(line);
 
     }
 }

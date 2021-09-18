@@ -11,8 +11,10 @@ public class Exercise1OfProject {
         System.out.println("enter first number and second number");
         int num1 = input.nextInt();
         int num2 = input.nextInt();
-        if (num1 / num2 == 0 || num2/num1==0) {
-            System.out.println(num1 + "\n" + num2);
+        if (num1%num2 == 0) {
+            System.out.println("First number is divisible by second number");
+        }else{
+            System.out.println("first number is not divisible by second number");
         }
     }
 }

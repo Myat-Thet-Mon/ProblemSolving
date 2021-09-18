@@ -10,20 +10,18 @@ public class Exercise6OfProject {
         Scanner input = new Scanner(System.in);
         System.out.println("enter cent");
         int cent = input.nextInt();
-        if (cent > 25 && cent < 100 && cent % 5 == 0) {
+        if (cent >= 25 && cent <= 100 && cent / 5 == 0) {
+            cent = 100 - cent;
             int q = cent / 25;
             cent = cent % 25;
             int dime = cent / 10;
             cent = cent % 10;
             int nickel = cent / 5;
-            cent = cent % 5;
-            int penny = cent;
             System.out.println("Quarter " + q);
             System.out.println("Dime " + dime);
             System.out.println("Nickel " + nickel);
-            System.out.println("Penny " + penny);
         } else {
-            System.out.println("error");
+            System.out.println("Error");
         }
     }
 }

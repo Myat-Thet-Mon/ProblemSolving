@@ -12,7 +12,8 @@ public class Exercise11OfProjectAtCap4 {
         while (cent >= 0) {
             System.out.println("Enter cent");
             cent = input.nextInt();
-            if (cent >= 25 && cent <= 100  ) {
+            if (cent >= 25 && cent <= 100 &&cent/5==0 ) {
+                    cent=100-cent;
                     int quarter = cent / 25;
                     cent = cent % 25;
                     int dime = cent / 10;
@@ -24,6 +25,7 @@ public class Exercise11OfProjectAtCap4 {
 
             } else {
                 System.out.println("error");
+                break;
             }
         }
     }

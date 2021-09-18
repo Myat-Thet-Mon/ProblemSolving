@@ -20,6 +20,18 @@ public class Exercise13OfProject extends JPanel {
         canvas.drawArc(x - (width / 2), y, width / 2, height, 90, -180);
         canvas.drawArc(wc + (width / 2), y, width / 2, height, 90, 180);
         canvas.drawArc(x - (width / 2) + width / 2, y + height, width, height / 2, 0, 180);
+     /*   String color=JOptionPane.showInputDialog("Enter yes or No");
+        if(color.equalsIgnoreCase("yes")){
+            canvas.setColor(Color.RED);
+            canvas.fillOval(xC, yC, width / 2, height / 2);
+            canvas.setColor(Color.BLUE);
+            canvas.drawOval(x, y, width, height);
+            canvas.setColor(Color.GREEN);
+            canvas.drawArc(x, y - (height / 2), width, height / 2, 0, -180);
+            canvas.drawArc(x - (width / 2), y, width / 2, height, 90, -180);
+            canvas.drawArc(wc + (width / 2), y, width / 2, height, 90, 180);
+            canvas.drawArc(x - (width / 2) + width / 2, y + height, width, height / 2, 0, 180);
+        }*/
     }
 
     public static void main(String[] args) {
@@ -29,5 +41,7 @@ public class Exercise13OfProject extends JPanel {
         frame.setSize(600, 300);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
+        //    String color=JOptionPane.showInputDialog("Enter yes or No");
+
     }
 }

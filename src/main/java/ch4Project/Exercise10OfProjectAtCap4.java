@@ -11,21 +11,45 @@ public class Exercise10OfProjectAtCap4 {
         double annually = 0;
         double monthly = 0;
         double daily = 0;
-        double interest=0;
-        System.out.println("Enter balance");
-        double oriBalance = input.nextDouble();
-        System.out.println("Enter interest rate");
-        double rate = input.nextDouble();
+        double annuallyInterest = 0;
+        double monthlyInterest = 0;
+        double dailyInterest = 0;
+        double totalAnnual = 0;
+        double totalMonthly = 0;
+        double totalDaily = 0;
+        String ans = null;
 
-        for (int i = 0; i < 10; i++) {
-            interest = oriBalance * (rate / 100);
-            oriBalance=oriBalance+interest;
-            annually = oriBalance + interest * 1;
-            monthly = oriBalance + interest * 12;
-            daily = oriBalance + interest * 356;
-        }
-        System.out.println("annually total balance " + annually);
-        System.out.println("monthly total balance " + monthly);
-        System.out.println("daily total balance " + daily);
+        do {
+            System.out.println("Enter balance");
+            double oriBalance = input.nextDouble();
+            System.out.println("Enter interest rate");
+            double rate = input.nextDouble();
+
+            for (int i = 0; i < 10; i++) {
+                annuallyInterest = oriBalance * (rate / 100);
+                annually = oriBalance + annuallyInterest;
+                oriBalance = annually;
+                totalAnnual = oriBalance;
+            }
+            for (int i = 0; i < 10; i++) {
+                monthlyInterest = oriBalance * ((rate / 12) / 100);
+                monthly = oriBalance + monthlyInterest;
+                oriBalance = monthly;
+                totalMonthly = oriBalance;
+            }
+            for (int i = 0; i < 10; i++) {
+                dailyInterest = oriBalance * ((rate / 365) / 100);
+                daily = oriBalance + dailyInterest;
+                oriBalance = daily;
+                totalDaily = oriBalance;
+            }
+
+            System.out.println("annually total balances " + totalAnnual);
+            System.out.println("monthly total balances " + totalMonthly);
+            System.out.println("daily total balances " + totalDaily);
+
+            System.out.println("Do you want to quit");
+            ans = input.next();
+        } while (!ans.equalsIgnoreCase("quit"));
     }
 }

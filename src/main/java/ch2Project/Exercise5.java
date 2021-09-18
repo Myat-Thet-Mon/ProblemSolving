@@ -7,20 +7,19 @@ read int to string
  */
 public class Exercise5 {
     public static void main(String[] args) {
-        Scanner input=new Scanner(System.in);
-        System.out.println("Enter integer");
-        int num1=input.nextInt();
-        System.out.println("Enter integer");
-        int num2=input.nextInt();
-        System.out.println("Enter integer");
-        int num3=input.nextInt();
-        System.out.println("Enter integer");
-        int num4=input.nextInt();
-        String a=String.valueOf(num1);
-        String b=String.valueOf(num2);
-        String c=String.valueOf(num3);
-        String d=String.valueOf(num4);
-        System.out.println(a+b+c+d);
-
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter four digit string");
+        String digit = input.next();
+        int num = Integer.parseInt(digit);
+        int a = num / 1000;
+        System.out.println(a);
+        num = num % 1000;
+        int b = num / 100;
+        System.out.println(b);
+        num = num % 100;
+        int c = num / 10;
+        System.out.println(c);
+        int d = num % 10;
+        System.out.println(d);
     }
 }

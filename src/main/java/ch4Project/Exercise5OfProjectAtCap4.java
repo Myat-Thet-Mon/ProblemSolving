@@ -3,7 +3,7 @@ package ch4Project;
 import java.util.Scanner;
 
 /*
-
+smallest
  */
 public class Exercise5OfProjectAtCap4 {
     public static void main(String[] args) {
@@ -17,23 +17,31 @@ public class Exercise5OfProjectAtCap4 {
         while(num>=0) {
             System.out.println("enter num");
             num = input.nextDouble();
-            if (num > largest) {
-                largest = num;
-            } else {
-                largest = largest;
+            if (num<0) {
+                break;
             }
-
-            if (num <smallest) {
-                smallest=num;
+            if(num>largest){
+                largest=num;
             }else{
                 smallest=num;
             }
+//           if (num > largest) {
+//                largest = num;
+//            } else {
+//                largest = largest;
+//            }
+//
+//            if (num <smallest) {
+//                smallest=num;
+//            }else{
+//                smallest=num;
+//            }
 
                 count++;
-            sum = +num;
-            if (count == 3) {
-                break;
-            }
+            System.out.println("C "+count);
+            sum =sum+num;
+            System.out.println("S "+sum);
+
         }
         System.out.println("Largest number "+largest);
         System.out.println("Smallest number "+smallest);

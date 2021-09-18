@@ -10,12 +10,13 @@ public class Exercise12 {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter radius with inches");
         double radius = input.nextDouble();
-        radius = radius * 0.004329;
+        radius=1*(radius/12);
         System.out.println("Enter height with feet");
         double height = input.nextDouble();
-        height = height * 7.48;
-        double cylinder = 3.14 * radius * radius * height;
-        System.out.println("Number of gallons " + cylinder);
+        double cylinderVolume = 3.14 * radius * radius * height;
+        cylinderVolume = cylinderVolume * 7.49;
+        System.out.println("the number of gallons stored in the well " + cylinderVolume);
+
 
     }
 }

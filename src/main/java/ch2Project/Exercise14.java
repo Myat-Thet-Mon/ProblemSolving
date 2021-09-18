@@ -13,12 +13,12 @@ public class Exercise14 extends JFrame {
          int height=Integer.parseInt(input);
          input=JOptionPane.showInputDialog("Enter age in year");
          int age=Integer.parseInt(input);
-         double female = 655 + (4.3 * pound) + (4.7 * height) - (4.7 * age);
-         double male = 66 + (6.3 * pound) + (12.9 * height) - (6.8 * age);
-         double BMRFemale = female / 230;
-         double BMRMale = male / 230;
-         JOptionPane.showMessageDialog(null,"Female "+BMRFemale);
-         JOptionPane.showMessageDialog(null,"Male "+BMRMale);
+         double BMRFemale = 655 + (4.3 * pound) + (4.7 * height) - (4.7 * age);
+         double BMRMale = 66 + (6.3 * pound) + (12.9 * height) - (6.8 * age);
+         double chocoFemale = BMRFemale / 230;
+         double chocoMale = BMRMale / 230;
+         JOptionPane.showMessageDialog(null,"Chocolate bars that can eat by female "+BMRFemale);
+         JOptionPane.showMessageDialog(null,"Chocolate bars that can eat bt male "+BMRMale);
 
      }
 }

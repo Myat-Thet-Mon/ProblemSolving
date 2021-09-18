@@ -9,40 +9,47 @@ public class Exercise9OfProject {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a string");
-        String word = input.next();
-        if (word.length() == 10) {
-            if (word.charAt(2) == '/' && word.charAt(5) == '/') {
-                int a = Character.getNumericValue(word.charAt(0));
-                String one = Character.toString(a);
-                int b = Character.getNumericValue(word.charAt(1));
-                String two = Character.toString(b);
-                int c = Character.getNumericValue(word.charAt(3));
-                String three = Character.toString(c);
-                int d = Character.getNumericValue(word.charAt(4));
-                String four = Character.toString(d);
-                int e = Character.getNumericValue(word.charAt(6));
-                String five = Character.toString(e);
-                int f = Character.getNumericValue(word.charAt(7));
-                String six = Character.toString(f);
-                int g = Character.getNumericValue(word.charAt(8));
-                String seven = Character.toString(g);
-                int h = Character.getNumericValue(word.charAt(9));
-                String eight = Character.toString(h);
-                String month = one + two;
-                int intMonth = Integer.parseInt(month);
-                String day = three + four;
-                int intDay = Integer.parseInt(day);
-                String year = five + six + seven + eight;
-                if (intMonth <= 12 && intDay <= 30) {
-                    System.out.println("Valid Date");
-
-                }else{
-                    System.out.println(" Invalid ");
-                }
-            }
-        } else {
-            System.out.println("Invalid");
+        String dateString = input.next();
+        //invalid date string
+        if (dateString.length() != 10 || dateString.charAt(2) != '/' || dateString.charAt(5) != '/') {
+            System.out.println("Invalid Date String");
+            return;
         }
 
+        int months = Integer.parseInt(dateString.substring(0, 2));
+        int days = Integer.parseInt(dateString.substring(3, 5));
+        int years = Integer.parseInt(dateString.substring(6));
+        boolean isLeapYear = (years % 4 == 0 && years % 100 != 0) || years % 400 == 0;
+
+        //validate month
+        if (months < 1 || months > 12) {
+            System.out.println("Invalid month");
+            return;
+        }
+
+        int maxDate = 31;
+        switch (months) {
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                maxDate = 30;
+                break;
+            case 2:
+                maxDate = isLeapYear? 29 : 28;
+                break;
+            default: maxDate = 31;
+        }
+
+        //validate date
+        if (days < 1 || days > maxDate) {
+            System.out.println("Invalid Days");
+            return;
+        }
+
+        System.out.println("It is a valid date");
+
     }
+
+
 }

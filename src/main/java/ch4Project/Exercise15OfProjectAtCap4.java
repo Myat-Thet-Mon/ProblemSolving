@@ -10,15 +10,16 @@ public class Exercise15OfProjectAtCap4 {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter number");
         int num=input.nextInt();
-        int count=0;
-        while(num<=10){
-            int result = (int) (Math.random() * 10) +1;
-            System.out.println(result);
-            count++;
-            if(count==3){
-                break;
+        int equal=0;
+        for(int i=0;i<3;i++){
+            int result = (int) (Math.random() * num) +1;
+            if(equal==result){
+                System.out.println("It is in valid");
+                System.exit(0);
             }
+            equal+=result;
 
+            System.out.println(result);
         }
     }
 }

@@ -10,6 +10,7 @@ public class Exercise7OfProject {
         String input = JOptionPane.showInputDialog("enter number of cent");
         int cent = Integer.parseInt(input);
         if (cent > 25 && cent < 100 && cent % 5 == 0) {
+            cent = 100 - cent;
             int q = cent / 25;
             cent = cent % 25;
             int dime = cent / 10;
@@ -17,7 +18,7 @@ public class Exercise7OfProject {
             int nickel = cent / 5;
             cent = cent % 5;
             int penny = cent;
-            JOptionPane.showMessageDialog(null, "Quarter "+q + "\n" + "Dime " + dime + "\n" + "Nickel " + nickel + "\n" + "Penny " + penny);
+            JOptionPane.showMessageDialog(null, "Quarter " + q + "\n" + "Dime " + dime + "\n" + "Nickel " + nickel + "\n" + "Penny " + penny);
         } else {
             JOptionPane.showMessageDialog(null, "Error");
         }

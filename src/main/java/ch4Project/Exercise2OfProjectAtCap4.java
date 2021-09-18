@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /*three non negative numbers
 Display the integers in increasing order.
+Write a program that implements your algorithm from Exercise 2.
  */
 public class Exercise2OfProjectAtCap4 {
     public static void main(String[] args) {
