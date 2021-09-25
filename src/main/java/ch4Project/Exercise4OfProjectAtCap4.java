@@ -11,7 +11,7 @@ public class Exercise4OfProjectAtCap4 {
         Scanner input = new Scanner(System.in);
         String num1 = JOptionPane.showInputDialog("Enter numbers");
         int num = Integer.parseInt(num1);
-        String result = null;
+        int result = 0;
         do {
             String ans = JOptionPane.showInputDialog("Enter temperature F or C");
             if (ans.equalsIgnoreCase("f")) {
@@ -33,8 +33,8 @@ public class Exercise4OfProjectAtCap4 {
                 }
             }
 
-            result = JOptionPane.showInputDialog("Do you want to continue yes or no");
+            result = JOptionPane.showConfirmDialog(null, "Do you want to continue yes or no?");
 
-        } while (result.equalsIgnoreCase("yes"));
+        } while (result == 0);
     }
 }

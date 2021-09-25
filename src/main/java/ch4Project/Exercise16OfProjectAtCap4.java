@@ -7,15 +7,21 @@ import java.util.Scanner;
  */
 public class Exercise16OfProjectAtCap4 {
     public static void main(String[] args) {
-        Scanner input=new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         System.out.println("Enter value");
-        int N= input.nextInt();
-        int choco=N;
-        System.out.println("We can eat "+N);
-        int coupon=choco;
-        System.out.println("We have "+coupon);
+        int n = input.nextInt();
+        int newChoco = 0;
 
-        int extraChoco=coupon/6;
-        System.out.println("We can eat extra "+extraChoco);
+        do {
+            int chocoBar = n;
+            int coupon = n;
+            int extraChoco = chocoBar / 6;
+            do {
+                extraChoco += chocoBar / 6;
+            } while (extraChoco >= 6);
+            newChoco = chocoBar + extraChoco;
+            System.out.println("We can eat :" + newChoco);
+
+        } while (newChoco >= 6);
     }
 }

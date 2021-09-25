@@ -10,7 +10,6 @@ public class Exercise4OfProject {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a string");
         String line = input.nextLine();
-
         if (line.charAt(line.length() - 1) == '?') {
             if (line.length() % 2 == 0) {
                 System.out.println("Yes");

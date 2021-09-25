@@ -31,13 +31,13 @@ public class Exercise10OfProjectAtCap4 {
                 oriBalance = annually;
                 totalAnnual = oriBalance;
             }
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 120; i++) {
                 monthlyInterest = oriBalance * ((rate / 12) / 100);
                 monthly = oriBalance + monthlyInterest;
                 oriBalance = monthly;
                 totalMonthly = oriBalance;
             }
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 3650; i++) {
                 dailyInterest = oriBalance * ((rate / 365) / 100);
                 daily = oriBalance + dailyInterest;
                 oriBalance = daily;

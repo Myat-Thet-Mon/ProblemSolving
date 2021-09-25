@@ -10,7 +10,7 @@ public class Exercise6OfProject {
         Scanner input = new Scanner(System.in);
         System.out.println("enter cent");
         int cent = input.nextInt();
-        if (cent >= 25 && cent <= 100 && cent / 5 == 0) {
+        if (cent >= 25 && cent <= 100 && cent %5 == 0) {
             cent = 100 - cent;
             int q = cent / 25;
             cent = cent % 25;

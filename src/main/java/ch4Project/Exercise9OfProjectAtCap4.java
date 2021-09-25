@@ -18,11 +18,12 @@ public class Exercise9OfProjectAtCap4 {
             String b = word.substring(1);
             String c = b + s;
             c=c.toLowerCase();
-            for (int i = 0; i < c.length(); i++) {
-                char f = c.charAt(word.length() - 1 - i);
-                System.out.print(f);
+            StringBuilder output = new StringBuilder(c).reverse();
+            if(output.toString().equals(word)){
+                System.out.println(word+" have this property");
+            }else{
+                System.out.println((word+" does not have this property"));
             }
-            System.out.println(" ");
             System.out.println("do you want to continue or quit");
             ans = input.next();
         } while (ans.equalsIgnoreCase("continue"));

@@ -7,19 +7,20 @@ import java.util.Scanner;
  */
 public class Exercise15OfProjectAtCap4 {
     public static void main(String[] args) {
-        Scanner input=new Scanner(System.in);
-        System.out.println("Enter number");
-        int num=input.nextInt();
-        int equal=0;
-        for(int i=0;i<3;i++){
-            int result = (int) (Math.random() * num) +1;
-            if(equal==result){
-                System.out.println("It is in valid");
-                System.exit(0);
-            }
-            equal+=result;
+        Scanner input = new Scanner(System.in);
+        int num = 10;
+        int result1 = 0;
+        int result2 = 0;
+        int result3 = 0;
 
-            System.out.println(result);
-        }
+        do {
+            result1 = (int) (Math.random() * num) + 1;
+            result2 = (int) (Math.random() * num) + 1;
+            result3 = (int) (Math.random() * num) + 1;
+        } while (result1 == result2 || result2 == result3 || result3 == result1 );
+        System.out.println(result1);
+        System.out.println(result2);
+        System.out.println(result3);
     }
 }
+
