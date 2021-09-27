@@ -1,7 +1,5 @@
 package ch2Exercise;
 
-import ch3.ch3Project.Exercise12OfProject;
-
 import javax.swing.*;
 import java.awt.*;
 
