@@ -1,9 +1,8 @@
 package ch5_SelfTest;
 
 import java.util.Scanner;
-
-public class Species {
-
+//28
+public class SpeciesEqualsDemo28 {
     private String name;
     private int population;
     private double growthRate;
@@ -36,10 +35,10 @@ public class Species {
      * Returns the projected population of the receiving object
      * after the specified number of years.
      */
+
     public int predictPopulation(int years) {
         int result = 0;
         double populationAmount = population;
-
         int count = years;
         while ((count > 0) && (populationAmount > 0)) {
             populationAmount = (populationAmount +
@@ -77,22 +76,21 @@ public class Species {
         return growthRate;
     }
 
-    public boolean equals(Species otherObject) {
+    public boolean equals(SpeciesEqualsDemo28 otherObject) {
         return (name.equalsIgnoreCase(otherObject.name)) &&
                 (population == otherObject.population) &&
                 (growthRate == otherObject.growthRate);
     }
 
-    public boolean isGrowthRateLargerThan(Species otherObject) {
-        if(population>otherObject.population){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
     public static void main(String[] args) {
-        Species s=new Species();
-     //   s.isGrowthRateLargerThan("John",100,2);
+        //SpeciesEqualsDemo s1,s2;new will create obj
+        SpeciesEqualsDemo28 s1 = new SpeciesEqualsDemo28();
+        SpeciesEqualsDemo28 s2 = new SpeciesEqualsDemo28();
+        s1.setSpecies("Klingon ox", 10, 15);
+        s2.setSpecies("Klingon ox", 10, 15);
+        if (s1 == s2)
+            System.out.println("Match with ==.");
+        else
+            System.out.println("Do Not match with ==.");
     }
 }

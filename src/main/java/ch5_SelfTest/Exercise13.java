@@ -2,7 +2,7 @@ package ch5_SelfTest;
 
 import java.util.Scanner;
 
-//We can use
+//We cannot use because data are private
 
 public class Exercise13 {
     private String name;

@@ -20,6 +20,12 @@ public class Exercise11 {
         this.growthRate = keyboard.nextDouble();
     }
 
+    public void writeOutput() {
+        System.out.println("Name = " + name);
+        System.out.println("Population = " + population);
+        System.out.println("Growth rate = " + growthRate + "%");
+    }
+
     public int predictPopulation(int years) {
         int result = 0;
         double populationAmount = this.population;
@@ -34,32 +40,22 @@ public class Exercise11 {
         return result;
     }
 
-    public int changePopulation(int change) {
-        this.population = change;
+    public int changePopulation(double area) {
+        this.population = (int) area * 2;
         return this.population;
     }
 
-    public double getDensity(double area) {
-        double number = this.population / area;
-        return number;
-    }
-
     public static void main(String[] args) {
+        Exercise11 second = new Exercise11();
         Scanner input = new Scanner(System.in);
-        Exercise12 second = new Exercise12();
-        second.readInput();
         System.out.println("Enter area");
         double area = input.nextDouble();
         System.out.println("Enter year");
         int year = input.nextInt();
-        System.out.println("Enter the change of population");
-        int population = input.nextInt();
+        second.readInput();
+        second.writeOutput();
         System.out.println(second.predictPopulation(year));
-        System.out.println(second.getDensity(area));
-
-       // second.changePopulation(population);
-        System.out.println(second.predictPopulation(year));
-        System.out.println(second.getDensity(area));
+        System.out.println(second.changePopulation(area));
     }
 }
 

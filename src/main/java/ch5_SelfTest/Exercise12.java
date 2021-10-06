@@ -20,6 +20,12 @@ public class Exercise12 {
         this.growthRate = keyboard.nextDouble();
     }
 
+    public void writeOutput() {
+        System.out.println("Name = " + name);
+        System.out.println("Population = " + population);
+        System.out.println("Growth rate = " + growthRate + "%");
+    }
+
     public int predictPopulation(int years) {
         int result = 0;
         double populationAmount = this.population;
@@ -34,30 +40,27 @@ public class Exercise12 {
         return result;
     }
 
-   // public int changePopulation(double area,int numberPerMile) {
-
-   // }
-
-    public double getDensity(double area) {
-        double number = this.population / area;
-        return number;
+    public int changePopulation(double area, int numberPerMile) {
+        this.population = (int) (numberPerMile * area);
+        return this.population;
     }
+
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Exercise12 second = new Exercise12();
-        second.readInput();
-        System.out.println("Enter area");
-        double area = input.nextDouble();
         System.out.println("Enter year");
         int year = input.nextInt();
-        System.out.println("Enter the change of population");
-        int population = input.nextInt();
-        System.out.println(second.predictPopulation(year));
-        System.out.println(second.getDensity(area));
+        System.out.println("Enter area");
+        double area = input.nextDouble();
+        System.out.println("Enter number per mile");
+        int numberPerMile = input.nextInt();
 
-     //   second.changePopulation(population);
-        System.out.println(second.predictPopulation(year));
-        System.out.println(second.getDensity(area));
+        second.readInput();
+        second.writeOutput();
+        System.out.println("Population after " + year + "years" + second.predictPopulation(year));
+        System.out.println("Change population :" + second.changePopulation(area, numberPerMile));
     }
+
+
 }

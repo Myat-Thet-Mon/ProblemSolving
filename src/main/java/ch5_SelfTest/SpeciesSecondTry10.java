@@ -2,7 +2,7 @@ package ch5_SelfTest;
 
 import java.util.Scanner;
 
-public class SpeciesSecondTry {
+public class SpeciesSecondTry10 {
     public String name;
     public int population;
     public double growthRate;
@@ -34,13 +34,13 @@ public class SpeciesSecondTry {
     }
 
     public double getDensity(double area) {
-        double number = this.population / area;
-        return number;
+        double density = this.population / area;
+        return density;
     }
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        SpeciesSecondTry second = new SpeciesSecondTry();
+        SpeciesSecondTry10 second = new SpeciesSecondTry10();
         second.readInput();
         System.out.println("Enter area");
         double area = input.nextDouble();

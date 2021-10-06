@@ -1,8 +1,9 @@
 package ch5_SelfTest;
 //4
+
 import java.util.Scanner;
 
-public class SpeciesFirstTryPopulation {
+public class SpeciesFirstTryPopulation4 {
     public String name;
     public int population;
     public double growthRate;
@@ -40,22 +41,22 @@ public class SpeciesFirstTryPopulation {
         return result;
     }
 
+    public int getFemalePopulation() {
+        int countF = getPopulation()/2+1;
+        return countF;
+    }
+
+    public int getMalePopulation() {
+        int countM = getPopulation()/2;
+        return countM;
+    }
+
     public static void main(String[] args) {
-        SpeciesFirstTryPopulation p = new SpeciesFirstTryPopulation();
+        SpeciesFirstTryPopulation4 p = new SpeciesFirstTryPopulation4();
         p.readInput();
         p.writeOutput();
-        int countF = 0;
-        int countM = 0;
-        int population = p.getPopulation();
-        for (int i = 1; i <= population; i++) {
-            if (i % 2 == 0) {
-                countF++;
-            } else {
-                countM++;
-            }
-        }
-        System.out.println("Total population :" + population);
-        System.out.println("Female population :" + countF);
-        System.out.println("Male population :" + countM);
+        System.out.println("Population after 10years :" + p.getPopulation() + " And Female population is:"
+                + p.getFemalePopulation() + " Male population is :" + p.getMalePopulation());
+
     }
 }

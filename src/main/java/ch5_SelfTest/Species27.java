@@ -1,8 +1,9 @@
 package ch5_SelfTest;
 
 import java.util.Scanner;
-//28
-public class SpeciesEqualsDemo {
+
+public class Species27 {
+
     private String name;
     private int population;
     private double growthRate;
@@ -35,10 +36,10 @@ public class SpeciesEqualsDemo {
      * Returns the projected population of the receiving object
      * after the specified number of years.
      */
-
     public int predictPopulation(int years) {
         int result = 0;
         double populationAmount = population;
+
         int count = years;
         while ((count > 0) && (populationAmount > 0)) {
             populationAmount = (populationAmount +
@@ -76,21 +77,36 @@ public class SpeciesEqualsDemo {
         return growthRate;
     }
 
-    public boolean equals(SpeciesEqualsDemo otherObject) {
+    public boolean equals(Species27 otherObject) {
         return (name.equalsIgnoreCase(otherObject.name)) &&
                 (population == otherObject.population) &&
                 (growthRate == otherObject.growthRate);
     }
 
+    public boolean isGrowthRateLargerThan(Species27 otherObject) {
+        if (this.population > otherObject.population) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
-        //SpeciesEqualsDemo s1,s2;
-        SpeciesEqualsDemo s1 = new SpeciesEqualsDemo();
-        SpeciesEqualsDemo s2 = new SpeciesEqualsDemo();
-        s1.setSpecies("Klingon ox", 10, 15);
-        s2.setSpecies("Klingon ox", 10, 15);
-        if (s1 == s2)
-            System.out.println("Match with ==.");
-        else
-            System.out.println("Do Not match with ==.");
+        Species27 s = new Species27();
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter year");
+        int year = input.nextInt();
+
+        s.readInput();
+        s.writeOutput();
+        System.out.println(s.predictPopulation(year));
+        s.setSpecies("Human", 100, 10);
+
+        Species27 other = new Species27();
+        other.name = "Human";
+        other.population = 100;
+        other.growthRate = 10;
+        System.out.println("Equals or not :" + s.equals(other));
+        System.out.println("greater than or not :" + s.isGrowthRateLargerThan(other));
     }
 }
