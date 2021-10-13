@@ -20,7 +20,7 @@ class Buying{
      */
     public int subtractFromCart(){
         if(addCart>0){
-         this.addCart=this.addToCart()-1;
+         this.addCart=this.addCart-1;
          return this.addCart;
         }else{
             return 0;

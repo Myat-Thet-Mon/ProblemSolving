@@ -1,18 +1,23 @@
-package ch5Project;
-
-import jdk.swing.interop.SwingInterOpUtils;
+package ch6Project;
 
 import java.util.Scanner;
 
 class ConcertPromoter {
-    private String nameOfTheBand = "EXO";
-    private int capacityOfTheVenue = 1000;
+    private String nameOfTheBand ;
+    private int capacityOfTheVenue ;
     private int numberOfTicketSoldByPhone;
     private int numberOfTicketSoldByVenue;
-    private double priceOfTicketSoldByPhone = 10000;
-    private double priceOfTheTicketSoldByVenue = 15000;
+    private double priceOfTicketSoldByPhone ;
+    private double priceOfTheTicketSoldByVenue ;
     private double totalSalesAmount;
 
+    public ConcertPromoter(String nameOfTheBand,int capacity, double priceOfTicketSoldByPhone,
+                           double priceOfTheTicketSoldByVenue){
+        this.nameOfTheBand=nameOfTheBand;
+        this.capacityOfTheVenue=capacity;
+        this.priceOfTheTicketSoldByVenue=priceOfTheTicketSoldByVenue;
+        this.priceOfTicketSoldByPhone=priceOfTicketSoldByPhone;
+    }
     public void recordSale(double numberOfTicket, String type) {
         if (type.equalsIgnoreCase("phone")) {
             this.numberOfTicketSoldByPhone += numberOfTicket;
@@ -101,9 +106,9 @@ class ConcertPromoter {
     }
 }
 
-public class Exercise10 {
+public class Exercise11 {
     public static void main(String[] args) {
-        ConcertPromoter concertPromoter = new ConcertPromoter();
+        ch6Project.ConcertPromoter concertPromoter = new ch6Project.ConcertPromoter("EXO",100,1500,1300);
         Scanner input = new Scanner(System.in);
         String ans = null;
         do {
@@ -130,5 +135,6 @@ public class Exercise10 {
         System.out.println("Total sales after change :" + concertPromoter.getTotalSale());
         System.out.println("NumberOfTicketSold :" + concertPromoter.getNumberOfTicketSold());
         System.out.println("NumberOfTicketRemaining :" + concertPromoter.getNumberOfTicketRemaining());
+
     }
 }

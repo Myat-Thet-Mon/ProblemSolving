@@ -3,34 +3,34 @@ package ch5Project;
 import java.util.Scanner;
 
 class Calculate {
-    private int number;
+    private int result;
 
     public int addNumber(int num1) {
-        return this.number + num1;
+        return this.result + num1;
     }
 
     public int subtractNumber(int num1) {
-        return this.number - num1;
+        return this.result - num1;
     }
 
     public int multiplyNumber(int num1) {
-        return this.number * num1;
+        return this.result * num1;
     }
 
     public int divisionNumber(int num1) {
-        return this.number / num1;
+        return this.result / num1;
     }
 
     public void delete() {
 
     }
 
-    public int getNumber() {
-        return number;
+    public int getResult() {
+        return result;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setResult(int result) {
+        this.result = result;
     }
 }
 
@@ -39,7 +39,7 @@ public class Calculator {
         Calculate calculator = new Calculate();
         Scanner input = new Scanner(System.in);
         System.out.println("enter first number");
-        calculator.setNumber(input.nextInt());
+        calculator.setResult(input.nextInt());
         System.out.println("Enter second number");
         System.out.println("Result of adding numbers :" + calculator.addNumber(input.nextInt()));
         System.out.println("Result of subtraction numbers :" + calculator.subtractNumber(5));

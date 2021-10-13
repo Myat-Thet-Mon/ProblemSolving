@@ -17,7 +17,6 @@ class StudentRollCall{
         this.address=input.nextLine();
         System.out.println("Enter phone no");
         this.phNo=input.nextInt();
-        this.id++;
     }
     public void countAbsentDay(){
         this.absent++;
@@ -35,6 +34,8 @@ public class RollCall {
         StudentRollCall studentRollCall=new StudentRollCall();
         studentRollCall.readInput();
         studentRollCall.countAbsentDay();
+
+
         studentRollCall.countAbsentDay();
         studentRollCall.output();
 

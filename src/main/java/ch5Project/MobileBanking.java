@@ -9,8 +9,9 @@ class BankAccount {
     private int phNo;
     private double oriAmount = 0;
 
-    public void transferFromOther(double amount) {
+    public void transferFromOther(BankAccount otherAccount, double amount) {
         this.oriAmount += amount;
+        otherAccount.oriAmount -= amount;
     }
 
     /**
@@ -19,11 +20,12 @@ class BankAccount {
      * @param amount
      * @return
      */
-    public double sentAmountToOther(double amount) {
+    public void sentAmountToOther(BankAccount other, double amount) {
         if (amount > this.oriAmount) {
-            return -1;
+           throw new RuntimeException("error");
         } else {
-            return this.oriAmount - amount;
+            this.oriAmount=this.oriAmount - amount;
+            other.oriAmount+=amount;
         }
     }
 
@@ -50,13 +52,16 @@ class BankAccount {
 
 public class MobileBanking {
     public static void main(String[] args) {
-        BankAccount bankAccount = new BankAccount();
-        bankAccount.readInput();
-        bankAccount.outputAccountInfo();
-        bankAccount.transferFromOther(5000);
-        bankAccount.sentAmountToOther(3000);
-        bankAccount.outputAccountInfo();
+        BankAccount bankAccount1 = new BankAccount();
+        BankAccount bankAccount2=new BankAccount();
+        bankAccount1.readInput();
+        bankAccount2.readInput();
+        bankAccount1.outputAccountInfo();
+        bankAccount2.outputAccountInfo();
+        bankAccount1.transferFromOther(bankAccount2,5000);
+        bankAccount1.sentAmountToOther(bankAccount2,3000);
+        bankAccount1.outputAccountInfo();
+        bankAccount2.outputAccountInfo();
 
     }
-
 }
