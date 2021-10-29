@@ -4,7 +4,6 @@ class RationalNumbers {
 
     private int numerator;
     private int denominator;
-    private String simplify;
 
     public RationalNumbers() {
         this.numerator = 0;
@@ -14,10 +13,12 @@ class RationalNumbers {
     public RationalNumbers(int a, int b) {
         this.numerator = a;
         this.denominator = b;
+        simplify(a,b);
     }
 
-    private void simplify() {
-        this.simplify = this.numerator + "/" + this.denominator;
+    private void simplify(int x,int y) {
+    this.numerator=this.numerator/getGCD(x,y);
+    this.denominator=this.denominator/getGCD(x,y);
     }
 
     private static int getGCD(int x, int y) {
@@ -40,28 +41,20 @@ class RationalNumbers {
         return largestNum;
     }
 
-    public double getValue(int x, int y) {
-        this.numerator = this.numerator / getGCD(x, y);
-        this.denominator = this.denominator / getGCD(x, y);
-        double value = (double) numerator / denominator;
-        return value;
+    public double getValue() {
+        return numerator / denominator;
     }
 
     public String toString() {
-        String ans = this.numerator + "/" + this.denominator;
-        return ans;
+        return this.numerator + "/" + this.denominator;
     }
 
-    public String getSimplify() {
-        return simplify;
-    }
 }
 
 public class Exercise12 {
     public static void main(String[] args) {
         RationalNumbers rationalNumbers = new RationalNumbers(40, 12);
-        System.out.println("Your input " + rationalNumbers.getSimplify());
-        System.out.println("Value " + rationalNumbers.getValue(40, 12));
-        System.out.println("into String " + rationalNumbers.toString());
+        System.out.println("Your input " + rationalNumbers.toString());
+        System.out.println("Value is "+rationalNumbers.getValue());
     }
 }

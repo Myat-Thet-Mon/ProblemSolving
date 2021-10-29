@@ -50,16 +50,19 @@ class Time {
             }
 
             //AM or PM
-            if (this.hour > 12) {
+            if (this.hour >= 12) {
                 this.result = true;
             }
 
-            if (this.hour > 12) {
+            if (this.hour > 12 && this.hour<24) {
                 this.hour = this.hour - 12;
                 System.out.print(this.hour);
-            } else if (this.hour == 0) {
+            }else if(this.hour==24){
+                System.out.print("00");
+            }
+            else if (this.hour == 0) {
                 System.out.print("12");
-            } else if (this.hour < 12) {
+            } else if (this.hour <= 12) {
                 System.out.print(this.hour);
             }
 
@@ -67,6 +70,7 @@ class Time {
 
             //for minute
             if (this.minute < 10) {
+                System.out.print("0");
                 System.out.print(this.minute);
             } else {
                 if (this.minute > 59) {

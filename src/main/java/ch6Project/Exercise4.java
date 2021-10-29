@@ -2,7 +2,7 @@ package ch6Project;
 
 import java.util.Scanner;
 
-class DollarFormat
+class TruncatedDollarFormat
 {
     /**
      Displays amount in dollars and cents notation.
@@ -58,12 +58,12 @@ public class Exercise4 {
         String response;
         Scanner keyboard = new Scanner(System.in);
         System.out.println(
-                "Testing DollarFormat.write:");
+                "Testing TruncatedDollarFormat.write:");
         do
         {
             System.out.println("Enter a value of type double:");
             amount = keyboard.nextDouble();
-            DollarFormat.write(amount);
+            TruncatedDollarFormat.write(amount);
             System.out.println();
             System.out.println("Test again?");
             response = keyboard.next();

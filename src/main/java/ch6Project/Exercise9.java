@@ -43,46 +43,50 @@ class Person1 {
         this.age = age;
     }
 
-    public Person1 createToddler() {
-        this.name = "A Toddler";
-        this.age = 2;
-        return this;
+    public static Person1 createToddler() {
+        Person1 tmp = new Person1();
+        tmp.setName("A toddler");
+        tmp.setAge(2);
+        return tmp;
     }
 
-    public Person1 createPreschooler() {
-        this.name = "A preschooler";
-        this.age = 5;
-        return this;
-
+    public static Person1 createPreschooler() {
+        Person1 tmp = new Person1();
+        tmp.setName("A preschooler");
+        tmp.setAge(5);
+        return tmp;
     }
 
-    public Person1 createAdolescent() {
-        this.name = "A Adolescent";
-        this.age = 9;
-        return this;
+    public static Person1 createAdolescent() {
+        Person1 tmp = new Person1();
+        tmp.setName("A adolescent");
+        tmp.setAge(9);
+        return tmp;
     }
 
-    public Person1 createTeenager() {
-        this.name = "A teenager";
-        this.age = 15;
-        return this;
+    public static Person1 createTeenager() {
+        Person1 tmp = new Person1();
+        tmp.setName("A teenager");
+        tmp.setAge(15);
+        return tmp;
     }
 
-    public Person1 createAdult() {
-        this.name = "A teenager";
-        this.age = 21;
-        return this;
+    public static Person1 createAdult() {
+        Person1 tmp = new Person1();
+        tmp.setName("An adult");
+        tmp.setAge(21);
+        return tmp;
     }
 }
 
 public class Exercise9 {
     public static void main(String[] args) {
-//        Scanner input=new Scanner(System.in);
-//        System.out.println("Enter your name");
-//        String name=input.next();
-//        System.out.println("Enter your age");
-//        int age=input.nextInt();
-        Person1 person1 = new Person1("Saw Mya", 4);
+        Scanner input=new Scanner(System.in);
+        System.out.println("Enter your name");
+        String name=input.nextLine();
+        System.out.println("Enter your age");
+        int age=input.nextInt();
+        Person1 person1 = new Person1(name,age);
         //person1.setName("Jue Jue");
         person1.setName("Myat", "Thet");
         System.out.println(person1.getName());

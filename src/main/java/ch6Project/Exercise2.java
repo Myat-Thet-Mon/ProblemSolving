@@ -35,7 +35,13 @@ class Species {
 
     public Species(String newName, int newPopulation, double newGrowRate) {
         this.name = newName;
-        this.population = newPopulation;
+        if (population >= 0)
+            this.population = newPopulation;
+        else {
+            System.out.println("ERROR: using a negative " +
+                    "population.");
+            System.exit(0);
+        }
         this.growthRate = newGrowRate;
     }
     public void readInput() {
@@ -99,7 +105,13 @@ class Species {
     }
 
     public void setPopulation(int population) {
-        this.population = population;
+        if (population >= 0)
+            this.population = population;
+        else {
+            System.out.println("ERROR: using a negative " +
+                    "population.");
+            System.exit(0);
+        }
     }
 
     public double getGrowthRate() {

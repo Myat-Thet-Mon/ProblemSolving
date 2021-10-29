@@ -12,72 +12,52 @@ class Characteristic {
         this.rating = 0;
     }
 
-    private boolean isValid(int aRating) {
-        if (aRating <= 10 && aRating > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * if user input rating is greater than 10 or less than 0;this method do nothing so rating is still original value;
-     *
-     * @param aRating
-     */
-    public void setRating(int aRating) {
-        if (isValid(aRating) == true) {
-            this.rating = aRating;
-        }
-    }
-
-    /**
-     * if user input rating is greater than 10 or less than 0;this method do nothing so rating is still original value;
-     */
-    public void setRating() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter your rating 1 to 10");
-        int inputRating = input.nextInt();
-        if (isValid(inputRating) == true) {
-            this.rating = inputRating;
-        }
-    }
-
-    public int getRating() {
-        return rating;
-    }
-
     public String getDescription() {
         return this.description;
     }
-
-    /**
-     * if this method return 0 that means description is no equal
-     * @param otherRating
-     * @return
-     */
+    public int getRating() {
+        return rating;
+    }
     public double getCompatibility(Characteristic otherRating) {
-        if (this.isMatch(otherRating) == true) {
-            return this.getCompatibilityMeasure(otherRating);
-        } else {
-            return 0;
-        }
+    if(isMatch(otherRating)==true){
+        return getCompatibilityMeasure(otherRating);
     }
-
+        return 0;
+    }
     private double getCompatibilityMeasure(Characteristic otherRating) {
-        this.compatibilityMeasure = 1 - (((this.rating - otherRating.rating) * (this.rating - otherRating.rating))
-                / 81);
-        return this.compatibilityMeasure;
+        if (this.rating==0 || otherRating.rating==0){
+            this.compatibilityMeasure=0;
+            return this.compatibilityMeasure;
+        }else {
+            this.compatibilityMeasure = 1 - (((this.rating - otherRating.rating) * (this.rating - otherRating.rating))
+                    / 81);
+            return this.compatibilityMeasure;
+        }
     }
-
-    private boolean isMatch(Characteristic otherRating) {
+    private boolean isMatch(Characteristic otherRating){
+        boolean result;
         if (this.description.equals(otherRating.description)) {
-            return true;
+            return result=true;
         } else {
-            return false;
+            return result=false;
         }
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public double getCompatibilityMeasure() {
+        return compatibilityMeasure;
+    }
+
+    public void setCompatibilityMeasure(double compatibilityMeasure) {
+        this.compatibilityMeasure = compatibilityMeasure;
+    }
 }
 
 public class Exercise15 {
@@ -92,7 +72,7 @@ public class Exercise15 {
         System.out.println("Your description " + characteristic.getDescription());
         System.out.println("Your rating is " + characteristic.getRating());
         Characteristic characteristic1 = new Characteristic("Good");
-        characteristic1.setRating();
+        characteristic1.setRating(rating);
         System.out.println("Compatibility " + characteristic.getCompatibility(characteristic1));
 
     }
