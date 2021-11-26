@@ -13,7 +13,7 @@ public class Exercise21 {
         list.add("D");
 
         //Convert to object array
-        Object[] array = list.toArray();
+        String[] array = list.toArray(new String[]{});
         System.out.println(Arrays.toString(array));
     }
 }

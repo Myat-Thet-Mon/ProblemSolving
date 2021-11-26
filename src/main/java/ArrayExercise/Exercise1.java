@@ -1,5 +1,7 @@
 package ArrayExercise;
 
+import java.util.Arrays;
+
 public class Exercise1 {
     public static void main(String[] args) {
         int[] array = {7, 2, 8, 1, 2};
@@ -13,9 +15,9 @@ public class Exercise1 {
                 }
             }
         }
-        for (int value : array) {
-            System.out.println(value);
-        }
+
+            System.out.println(Arrays.toString(array));
+
 
 
         for (int i = 1; i < inputString.length; i++) {
